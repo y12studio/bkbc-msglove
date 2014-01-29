@@ -18,5 +18,6 @@ package org.blackbananacoin.msglove;
 public class UI {
 
 	public static final String TAG = "bkbc-msglove";
+	public static final String MSG = "致-O-:在今年-E-將你最後的溫柔鎖進比特幣記憶庫,謝謝你-L-在-V-";
 
 }

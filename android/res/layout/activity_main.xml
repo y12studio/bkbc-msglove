@@ -147,7 +147,7 @@
                 android:ems="10"
                 android:hint="BTC"
                 android:inputType="numberDecimal"
-                android:text="0.1314999" />
+                android:text="0.13149999" />
         </LinearLayout>
     </LinearLayout>
 
@@ -169,13 +169,13 @@
             android:gravity="center" >
 
             <Button
-                android:id="@+id/btnGenPrivKey"
+                android:id="@+id/btnPay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="付出" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnShare"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="分享" />
@@ -185,6 +185,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="收回" />
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重設" />
 
 
         </LinearLayout>
@@ -198,7 +203,6 @@
                 android:orientation="vertical" android:background="#666666">
 
                 <TextView
-                    android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
