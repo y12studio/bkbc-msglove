@@ -61,7 +61,6 @@ public class MainActivity extends Activity implements OnClickListener,
 
 	private static class KeyInfo {
 		private Address addr;
-		private byte[] privateKey;
 		private DumpedPrivateKey privateKeyEncoded;
 
 		public Address getAddr() {
@@ -70,14 +69,6 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		public void setAddr(Address addr) {
 			this.addr = addr;
-		}
-
-		public byte[] getPrivateKey() {
-			return privateKey;
-		}
-
-		public void setPrivateKey(byte[] privateKey) {
-			this.privateKey = privateKey;
 		}
 
 		public DumpedPrivateKey getPrivateKeyEncoded() {
@@ -132,7 +123,7 @@ public class MainActivity extends Activity implements OnClickListener,
 		Address addr = new Address(MainNetParams.get(), eckey.getPubKeyHash());
 		Log.v(UI.TAG, "Addr=" + addr.toString());
 		r.setAddr(addr);
-		r.setPrivateKey(eckey.getPrivKeyBytes());
+		//r.setPrivateKey(eckey.getPrivKeyBytes());
 		r.setPrivateKeyEncoded(dkey);
 		testDumpKey(dkey.toString());
 		return r;
