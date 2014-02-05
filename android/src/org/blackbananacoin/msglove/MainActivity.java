@@ -28,6 +28,12 @@ import java.util.Date;
 
 import org.blackbananacoin.common.bitcoin.Bitcoins;
 
+import com.google.bitcoin.core.Address;
+import com.google.bitcoin.core.AddressFormatException;
+import com.google.bitcoin.core.DumpedPrivateKey;
+import com.google.bitcoin.core.ECKey;
+import com.google.bitcoin.params.MainNetParams;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -41,12 +47,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.google.bitcoin.core.Address;
-import com.google.bitcoin.core.AddressFormatException;
-import com.google.bitcoin.core.DumpedPrivateKey;
-import com.google.bitcoin.core.ECKey;
-import com.google.bitcoin.params.MainNetParams;
 
 public class MainActivity extends Activity implements OnClickListener,
 		TextWatcher {
