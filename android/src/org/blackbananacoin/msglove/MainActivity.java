@@ -119,24 +119,14 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	private void handleClickRestoreKey() {
-		// wallet key save to /mnt/sdcard/datelabel.key
-		// private key file content
-		// BitcoinxxxxxxxxxxxxxxxAddress 2014-01-28T09:13:54Z
-		SimpleDateFormat fmDateKeyContent = new SimpleDateFormat(
-				"yyyy-MM-dd'T'HH:mm:ss'Z'");
+
 		SimpleDateFormat fmFileName = new SimpleDateFormat(
 				"'msglove-'MMdd-HHmmss'.key'");
-		long time = new Date().getTime();
-		long createTime = time - 48 * 60 * 60 * 1000; // 2 days ago
-		String timeInKey = fmDateKeyContent.format(new Date(createTime));
-		Log.i(UI.TAG, "timeKey=" + timeInKey);
-
 		String keyFileName = fmFileName.format(new Date());
 		ECKey k = getKeyInfoFromUi();
 		if (k != null) {
-			String keyContent = "# KEEP YOUR PRIVATE KEYS SAFE !\n"
-					+ k.getPrivateKeyEncoded(MainNetParams.get()).toString() + " " + timeInKey
-					+ "\n# End of private keys";
+			// 48 hrs ago = 2 days
+			String keyContent = Bitcoins.walletPrivateKeyFormat(k, MainNetParams.get(), 48);
 			Log.i(UI.TAG, "keycontent=" + keyContent);
 			if (isExternalStorageWritable()) {
 				File f = getDownloadStorageDir(keyFileName);
